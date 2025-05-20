@@ -1,0 +1,108 @@
+const projects = [
+  {
+    id: "1",
+    title: "Portfolio Website",
+    description:
+      "A sleek personal portfolio built with Next.js and TailwindCSS. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi possimus ad veniam quos, accusantium qui impedit minus voluptatem eveniet rerum corporis saepe repellendus. Blanditiis, in culpa labore sapiente repellendus explicabo.",
+    image: "https://picsum.photos/800/600?random=1",
+    link: "https://yourportfolio.com",
+    featured: true,
+    tags: ["Portfolio", "Frontend", "Next.js"],
+    authorName: "Alex Johnson",
+    authorAvatar: "https://i.pravatar.cc/100?img=1",
+    postedAt: "2025-04-19T10:30:00Z",
+  },
+  {
+    id: "2",
+    title: "E-commerce Store",
+    description:
+      "Full-featured online store with cart and checkout functionality.",
+    image: "https://picsum.photos/800/600?random=2",
+    link: "https://ecommercestore.com",
+    featured: true,
+    tags: ["E-commerce", "React", "Payments"],
+    authorName: "Jamie Smith",
+    authorAvatar: "https://i.pravatar.cc/100?img=2",
+    postedAt: "2025-04-18T16:15:00Z",
+  },
+  {
+    id: "3",
+    title: "Blog CMS",
+    description:
+      "A customizable content management system built using Sanity.io and Next.js.",
+    image: "https://picsum.photos/800/600?random=3",
+    link: "https://yourblogcms.com",
+    featured: false,
+    tags: ["CMS", "Sanity", "Next.js"],
+    authorName: "Taylor Green",
+    authorAvatar: "https://i.pravatar.cc/100?img=3",
+    postedAt: "2025-04-16T09:45:00Z",
+  },
+  {
+    id: "4",
+    title: "Task Manager App",
+    description:
+      "A productivity app to manage your daily tasks with priority tagging.",
+    image: "https://picsum.photos/800/600?random=4",
+    link: "https://taskmanager.com",
+    featured: false,
+    tags: ["Productivity", "TypeScript", "Tailwind"],
+    authorName: "Morgan Lee",
+    authorAvatar: "https://i.pravatar.cc/100?img=4",
+    postedAt: "2025-04-14T14:20:00Z",
+  },
+  {
+    id: "5",
+    title: "Real-Time Chat",
+    description:
+      "A real-time messaging app using Socket.IO, Node.js, and React.",
+    image: "https://picsum.photos/800/600?random=5",
+    link: "https://chatapp.com",
+    featured: true,
+    tags: ["Chat", "Socket.IO", "Node.js", "React"],
+    authorName: "Jordan White",
+    authorAvatar: "https://i.pravatar.cc/100?img=5",
+    postedAt: "2025-04-12T11:00:00Z",
+  },
+  {
+    id: "6",
+    title: "Fitness Tracker",
+    description:
+      "Track your workouts, goals, and progress over time with clean UI charts.",
+    image: "https://picsum.photos/800/600?random=6",
+    link: "https://fittrack.io",
+    featured: false,
+    tags: ["Health", "Charts", "React", "Tailwind"],
+    authorName: "Casey Brown",
+    authorAvatar: "https://i.pravatar.cc/100?img=6",
+    postedAt: "2025-04-10T08:00:00Z",
+  },
+  {
+    id: "7",
+    title: "AI Image Generator",
+    description:
+      "Create stunning AI-generated art with a simple text prompt using DALL·E.",
+    image: "https://picsum.photos/800/600?random=7",
+    link: "https://aiimages.io",
+    featured: true,
+    tags: ["AI", "DALL·E", "Next.js", "OpenAI"],
+    authorName: "Riley Kim",
+    authorAvatar: "https://i.pravatar.cc/100?img=7",
+    postedAt: "2025-04-08T17:30:00Z",
+  },
+  {
+    id: "8",
+    title: "Weather Dashboard",
+    description:
+      "A modern weather dashboard with real-time API integration and beautiful UI.",
+    image: "https://picsum.photos/800/600?random=8",
+    link: "https://weather-now.io",
+    featured: false,
+    tags: ["Weather", "API", "Next.js", "Tailwind"],
+    authorName: "Drew Carter",
+    authorAvatar: "https://i.pravatar.cc/100?img=8",
+    postedAt: "2025-04-06T13:10:00Z",
+  },
+];
+
+export default projects;

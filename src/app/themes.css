@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/*
+  This tells DaisyUI to be aware of your theme names.
+  Since we are NOT defining DaisyUI's specific color variables like --p, --s, --b1
+  within our custom theme blocks, DaisyUI components will mostly inherit from body
+  or use their own default un-themed styles.
+*/
+@theme {
+  --color-primary-hsl: 210 90% 58%; /* A slightly more vibrant blue */
+  --color-secondary-hsl: 185 80% 40%; /* Teal */
+  --color-accent-hsl: 260 85% 65%; /* Lavender */
+  --color-background-hsl: 225 15% 12%; /* Deep, cool dark blue */
+  --color-surface-hsl: 225 15% 18%; /* Slightly lighter for cards */
+  --color-text-base-hsl: 210 15% 88%; /* Soft off-white */
+  --color-text-muted-hsl: 210 15% 60%; /* Muted gray */
+  --color-text-inverted-hsl: 225 15% 10%; /* Very dark for contrast on light elements */
+  --color-border-hsl: 225 15% 28%; /* Border color */
+  --color-error-hsl: 0 70% 60%;
+  --color-warning-hsl: 38 95% 55%;
+  --color-success-hsl: 140 65% 50%;
+  --color-info-hsl: 200 90% 55%;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+@layer base {
+  /* Default theme values (Dark Theme) applied to :root and [data-theme="dark"] */
+  :root {
+    --color-primary-hsl: 210 90% 58%; /* A slightly more vibrant blue */
+    --color-secondary-hsl: 185 80% 40%; /* Teal */
+    --color-accent-hsl: 260 85% 65%; /* Lavender */
+    --color-background-hsl: 225 15% 12%; /* Deep, cool dark blue */
+    --color-surface-hsl: 225 15% 18%; /* Slightly lighter for cards */
+    --color-text-base-hsl: 210 15% 88%; /* Soft off-white */
+    --color-text-muted-hsl: 210 15% 60%; /* Muted gray */
+    --color-text-inverted-hsl: 225 15% 10%; /* Very dark for contrast on light elements */
+    --color-border-hsl: 225 15% 28%; /* Border color */
+    --color-error-hsl: 0 70% 60%;
+    --color-warning-hsl: 38 95% 55%;
+    --color-success-hsl: 140 65% 50%;
+    --color-info-hsl: 200 90% 55%;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+  [data-theme="dark"] {
+    --color-primary-hsl: 210 90% 58%; /* A slightly more vibrant blue */
+    --color-secondary-hsl: 185 80% 40%; /* Teal */
+    --color-accent-hsl: 260 85% 65%; /* Lavender */
+    --color-background-hsl: 225 15% 12%; /* Deep, cool dark blue */
+    --color-surface-hsl: 225 15% 18%; /* Slightly lighter for cards */
+    --color-text-base-hsl: 210 15% 88%; /* Soft off-white */
+    --color-text-muted-hsl: 210 15% 60%; /* Muted gray */
+    --color-text-inverted-hsl: 225 15% 10%; /* Very dark for contrast on light elements */
+    --color-border-hsl: 225 15% 28%; /* Border color */
+    --color-error-hsl: 0 70% 60%;
+    --color-warning-hsl: 38 95% 55%;
+    --color-success-hsl: 140 65% 50%;
+    --color-info-hsl: 200 90% 55%;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  [data-theme="light"] {
+    /* "Old Book" Theme */
+    --color-primary-hsl: 35 55% 50%; /* Muted Orange/Ochre */
+    --color-secondary-hsl: 45 35% 40%; /* Desaturated Brown */
+    --color-accent-hsl: 70 30% 55%; /* Muted Olive/Moss Green */
+    --color-background-hsl: 40 60% 95%; /* Creamy Beige (aged paper) */
+    --color-surface-hsl: 40 55% 90%; /* Slightly darker cream for cards */
+    --color-text-base-hsl: 30 45% 25%; /* Dark Sepia/Brown (ink) */
+    --color-text-muted-hsl: 30 40% 45%; /* Lighter Sepia */
+    --color-text-inverted-hsl: 40 60% 97%; /* Very light cream for dark accents */
+    --color-border-hsl: 35 35% 75%; /* Faded brown border */
+    --color-error-hsl: 0 60% 55%;
+    --color-warning-hsl: 30 70% 60%;
+    --color-success-hsl: 90 40% 50%;
+    --color-info-hsl: 190 50% 55%;
+    font-family: "Georgia", "Times New Roman", Times, serif;
+  }
+
+  [data-theme="cyberpunk"] {
+    --color-primary-hsl: 315 100% 55%; /* Hot Pink/Magenta */
+    --color-secondary-hsl: 50 100% 50%; /* Electric Yellow */
+    --color-accent-hsl: 175 100% 45%; /* Bright Cyan/Aqua */
+    --color-background-hsl: 260 30% 8%; /* Very Dark, slightly desaturated Purple/Blue */
+    --color-surface-hsl: 260 25% 14%; /* Darker Purple for surfaces */
+    --color-text-base-hsl: 175 100% 88%; /* Light Cyan / Electric Blue text */
+    --color-text-muted-hsl: 315 80% 75%; /* Lighter Pink for muted text */
+    --color-text-inverted-hsl: 260 30% 6%; /* Very dark for contrast on neons */
+    --color-border-hsl: 175 100% 35%; /* Darker Cyan border */
+    --color-error-hsl: 350 100% 60%; /* Glitchy Red */
+    --color-warning-hsl: 40 100% 55%; /* Glitchy Orange */
+    --color-success-hsl: 140 100% 50%; /* Neon Green */
+    --color-info-hsl: 200 100% 60%; /* Electric Blue */
+    font-family: "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas",
+      "Liberation Mono", "Courier New", monospace;
+  }
+}
+
+html,
+body {
+  background-color: hsl(var(--color-background-hsl));
+  color: hsl(var(--color-text-base-hsl));
+  min-height: 100vh;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
