@@ -68,16 +68,23 @@ function ColorPicker({ editor }: { editor: Editor }) {
 }
 
 function MenuBar({ editor }: { editor: Editor | null }) {
-  if (!editor) return null;
-
+  // --- FIX: Moved useCallback Hooks to the top ---
   const addImage = useCallback(() => {
+    // Original logic: relies on 'editor' being non-null if called.
+    // The 'if (!editor) return null;' below will prevent UI that uses this from rendering.
     const url = window.prompt("Image URL:");
-    if (url && (url.startsWith("http://") || url.startsWith("https://"))) {
+    if (
+      editor &&
+      url &&
+      (url.startsWith("http://") || url.startsWith("https://"))
+    ) {
       editor.chain().focus().setImage({ src: url }).run();
     }
   }, [editor]);
 
   const setLink = useCallback(() => {
+    // Original logic: relies on 'editor' being non-null.
+    if (!editor) return; // Added guard for safety if somehow called when editor is null, though UI should prevent this.
     const previous = editor.getAttributes("link").href;
     const url = window.prompt("URL", previous);
     if (url === null) return;
@@ -86,6 +93,8 @@ function MenuBar({ editor }: { editor: Editor | null }) {
   }, [editor]);
 
   const insertTable = useCallback(() => {
+    // Original logic: relies on 'editor' being non-null.
+    if (!editor) return; // Added guard for safety.
     const rows = parseInt(window.prompt("Rows:", "3") || "3", 10);
     const cols = parseInt(window.prompt("Cols:", "3") || "3", 10);
     if (!isNaN(rows) && !isNaN(cols)) {
@@ -96,6 +105,9 @@ function MenuBar({ editor }: { editor: Editor | null }) {
         .run();
     }
   }, [editor]);
+  // --- End of Hook declarations ---
+
+  if (!editor) return null; // This conditional return is now AFTER all Hook calls
 
   return (
     <div className="menu-bar flex flex-wrap gap-1">
@@ -197,13 +209,13 @@ function MenuBar({ editor }: { editor: Editor | null }) {
       />
       <IconButton
         onClick={addImage}
-        active={false}
+        active={false} // Assuming active state for addImage is always false or managed differently
         Icon={LuImage}
         label="Image"
       />
       <IconButton
         onClick={insertTable}
-        active={false}
+        active={false} // Assuming active state for insertTable is always false
         Icon={LuTable}
         label="Insert Table"
       />
@@ -222,19 +234,19 @@ function MenuBar({ editor }: { editor: Editor | null }) {
       {/* Table Actions */}
       <IconButton
         onClick={() => editor.chain().focus().deleteTable().run()}
-        active={false}
+        active={false} // Consider editor.can().deleteTable() for active/disabled state
         Icon={LuTrash}
         label="Delete Table"
       />
       <IconButton
         onClick={() => editor.chain().focus().deleteRow().run()}
-        active={false}
+        active={false} // Consider editor.can().deleteRow()
         Icon={LuRows2}
         label="Delete Row"
       />
       <IconButton
         onClick={() => editor.chain().focus().deleteColumn().run()}
-        active={false}
+        active={false} // Consider editor.can().deleteColumn()
         Icon={LuColumns2}
         label="Delete Column"
       />
@@ -271,13 +283,13 @@ function MenuBar({ editor }: { editor: Editor | null }) {
       {/* History */}
       <IconButton
         onClick={() => editor.chain().focus().undo().run()}
-        active={false}
+        active={false} // Consider !editor.can().undo() for disabled state
         Icon={LuUndo}
         label="Undo"
       />
       <IconButton
         onClick={() => editor.chain().focus().redo().run()}
-        active={false}
+        active={false} // Consider !editor.can().redo() for disabled state
         Icon={LuRedo}
         label="Redo"
       />

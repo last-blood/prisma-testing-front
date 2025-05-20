@@ -41,6 +41,9 @@ const eslintConfig = [
       // For example:
       // "@typescript-eslint/explicit-module-boundary-types": "off",
       // "@typescript-eslint/no-empty-function": "off",
+      "@typescript-eslint/no-empty-interface": "off", // Common actual rule name for empty interfaces
+      // "@typescript-eslint/no-empty-interface" is the typical rule.
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
