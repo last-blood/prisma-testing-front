@@ -53,6 +53,10 @@ const eslintConfig = [
 
       // For "Do not use "@ts-nocheck" because it alters compilation errors."
       "@typescript-eslint/ban-ts-comment": "off", // Allows using // @ts-ignore, // @ts-nocheck, etc.
+      "@typescript-eslint/no-empty-interface": "off",
+
+      // For "Expected an assignment or function call and instead saw an expression."
+      "@typescript-eslint/no-unused-expressions": "off",
     },
   },
 ];
