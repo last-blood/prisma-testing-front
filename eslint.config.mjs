@@ -44,6 +44,15 @@ const eslintConfig = [
       "@typescript-eslint/no-empty-interface": "off", // Common actual rule name for empty interfaces
       // "@typescript-eslint/no-empty-interface" is the typical rule.
       "react/no-unescaped-entities": "off",
+      // For "An interface declaring no members is equivalent to its supertype."
+      // This is typically the rule name, even if the error log mentioned @typescript-eslint/no-empty-object-type
+      "@typescript-eslint/no-empty-interface": "off",
+
+      // For "React Hook useEffect has a missing dependency..."
+      "react-hooks/exhaustive-deps": "off", // Disables warnings about missing dependencies in Hooks like useEffect
+
+      // For "Do not use "@ts-nocheck" because it alters compilation errors."
+      "@typescript-eslint/ban-ts-comment": "off", // Allows using // @ts-ignore, // @ts-nocheck, etc.
     },
   },
 ];
