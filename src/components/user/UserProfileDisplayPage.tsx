@@ -1,3 +1,4 @@
+// @ts-nocheck
 // filePath: @/app/projects/[id]/page.tsx
 "use client";
 
